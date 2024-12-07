@@ -2,12 +2,9 @@ import math
 import heapq
 import toolz
 import numpy as np
-# import tensorflow as tf
 from scipy.sparse import lil_matrix
-from sklearn.metrics import roc_auc_score
 from utils import to_cuda
 import torch
-from time import time
 
 class RecallEvaluator(object):
     def __init__(self, model, train_dataset, test_dataset):
@@ -18,7 +15,6 @@ class RecallEvaluator(object):
                in the recall calculation
         :param test_user_item_matrix: the held-out user-item pairs we make prediction against
         """
-        # self.model = model TODO: model还是只在应用eval的时候进行定义吧，这样避免RecallEvaluator中的model和train中的model不一致
         self.textualfeatures = test_dataset.textualfeatures
         self.imagefeatures = test_dataset.imagefeatures
         train_user_item_matrix = train_dataset.dataMatrix
@@ -46,7 +42,7 @@ class RecallEvaluator(object):
         test_ndcg = []
         test_hr = []
         test_pr = []
-        test_users = np.asarray(list(set(self.test_user_item_matrix_dox.nonzero()[0])), dtype=np.int64) # TODO: 如果某一个user在测试集中存在不止一次，那可能对其他user不公平
+        test_users = np.asarray(list(set(self.test_user_item_matrix_dox.nonzero()[0])), dtype=np.int64)
         for user_chunk in toolz.partition_all(20, test_users):
             recalls, ndcgs, hit_ratios, precisions = self.eval_batch(model, user_chunk)
             test_recalls.extend(recalls)

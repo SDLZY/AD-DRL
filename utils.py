@@ -20,7 +20,7 @@ def create_logger(output_path):
         makedirsExist(output_path)
     assert os.path.exists(output_path), '{} does not exist'.format(output_path)
 
-    log_file = 'log_{}_{}.log'.format(time.strftime('%Y-%m-%d-%H-%M'), output_path.split('/')[3])
+    log_file = 'log_{}_{}.log'.format(time.strftime('%Y-%m-%d-%H-%M'), output_path.split('/')[1])
     head = '%(asctime)-15s %(message)s'
     logging.basicConfig(filename=os.path.join(output_path, log_file), format=head)
     logger = logging.getLogger()
