@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 import numpy as np
 from amazon import AmazonDataset
-from model import FactorAttributeNceNegBrand
+from model import ADDRL
 import os, sys
 import argparse
 from time import time
@@ -164,7 +164,7 @@ def mainer(args):
     print(n_users, n_items)
     train_loader = DataLoader(train_dataset, args.batch_size, shuffle=True, num_workers=6, drop_last=True)
 
-    model = FactorAttributeNceNegBrand(n_users,
+    model = ADDRL(n_users,
                  n_items,
                  num_neg=args.num_neg,
                  n_factors=args.n_factors,

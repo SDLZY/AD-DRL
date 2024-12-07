@@ -6,8 +6,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from module import Module
-
-class FactorAttributeNceNegBrand(Module):
+#FactorAttributeNceNegBrand
+class ADDRL(Module):
     def __init__(self,
                  n_users,
                  n_items,
@@ -25,7 +25,7 @@ class FactorAttributeNceNegBrand(Module):
                  temp=1,
                  dataset_name='Sports'
                  ):
-        super(FactorAttributeNceNegBrand, self).__init__()
+        super(ADDRL, self).__init__()
 
         self.n_users = n_users
         self.n_items = n_items
