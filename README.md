@@ -21,12 +21,12 @@ Many Recommendation methods focus on learning robust and independent representat
 We provide three processed datasets: Amazon-Baby, Amazon-Sports and Amazon-ToysGames.
 
 * The dataset is released at [Google Drive](https://drive.google.com/drive/folders/18LRHDZhcX2KYJ-f_ThZdQgRmKls8WvUH?usp=sharing).
-* Please download the three datasets and place them in the `AD-DRL/` folder.
+* Please download the three datasets and place them in the `AD-DRL/AmazonData` folder.
 * see more in `amazon.py`
 
 ## Checkpoints
 
-We provide checkpoints on three datasets. Please download them from [Google Drive](https://drive.google.com/drive/folders/11JM0Iw3dsy_vUAVGKjMgqyA6VJCtNhmi?usp=sharing) and place them in the `AD-DRL/` folder.
+We provide checkpoints on three datasets. Please download them from [Google Drive](https://drive.google.com/drive/folders/11JM0Iw3dsy_vUAVGKjMgqyA6VJCtNhmi?usp=sharing) and place them in the `AD-DRL/checkpoints` folder.
 
 ## Model Training
 
